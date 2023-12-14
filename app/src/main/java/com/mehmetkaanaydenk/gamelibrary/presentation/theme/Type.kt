@@ -1,4 +1,4 @@
-package com.mehmetkaanaydenk.gamelibrary.ui.theme
+package com.mehmetkaanaydenk.gamelibrary.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
