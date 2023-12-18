@@ -13,18 +13,27 @@ import javax.inject.Inject
 
 class GetGamesUseCase @Inject constructor(private val repository: GameRepository) {
 
-    fun executeGetGames(search: String): Flow<Resource<List<Game>>> = flow {
+    fun executeGetGames(search: String?): Flow<Resource<List<Game>>> = flow {
 
         try {
             emit(Resource.Loading())
             val gameList = repository.getGames(search)
 
+            println("use case catch'e girmedi")
+
             if (gameList.count > 0){
-
+                val list = gameList.toGameList()
+                if (list.isEmpty()){
+                    println("liste boşşş")
+                }else{
+                    println("liste doluuu")
+                    println(list[0].name)
+                }
                 emit(Resource.Success(gameList.toGameList()))
-
+                println("use case oyun var")
             }else{
                 emit(Resource.Error("No game found!"))
+                println("use case oyun sayısı 0")
             }
 
         }catch (e: IOError){

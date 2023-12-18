@@ -8,6 +8,7 @@ import javax.inject.Inject
 
 class GameRepositoryImpl @Inject constructor(private val api: GameAPI) : GameRepository {
     override suspend fun getGames(search: String?): GamesDto {
+        println("api çağırıldı")
         return api.getGames(search = search)
     }
 

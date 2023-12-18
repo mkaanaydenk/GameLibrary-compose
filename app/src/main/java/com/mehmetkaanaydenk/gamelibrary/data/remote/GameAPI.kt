@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface GameAPI {
 
-    @GET("games")
+    @GET("api/games")
     suspend fun getGames(
         @Query("search") search: String? = null,
         @Query("key") apiKey: String = BuildConfig.API_KEY
