@@ -119,6 +119,6 @@ dependencies {
 
     implementation("androidx.navigation:navigation-compose:$navVersion")
 
-
+    implementation(kotlin("reflect"))
 
 }
